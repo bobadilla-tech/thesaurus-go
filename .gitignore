@@ -1,0 +1,5 @@
+data/*.xml
+*.log
+*.exe
+/wnparser
+/wnparser.exe
