@@ -1,0 +1,914 @@
+{
+  "angry": {
+    "synonyms": [
+      "furious",
+      "mad",
+      "enraged",
+      "irate",
+      "livid",
+      "wrathful",
+      "indignant"
+    ],
+    "antonyms": [
+      "calm",
+      "peaceful",
+      "content",
+      "pleased",
+      "serene",
+      "tranquil"
+    ]
+  },
+  "bad": {
+    "synonyms": [
+      "poor",
+      "terrible",
+      "awful",
+      "dreadful",
+      "horrible",
+      "inferior",
+      "unpleasant",
+      "wicked"
+    ],
+    "antonyms": [
+      "good",
+      "excellent",
+      "fine",
+      "superb",
+      "splendid",
+      "wonderful",
+      "great"
+    ]
+  },
+  "beautiful": {
+    "synonyms": [
+      "attractive",
+      "lovely",
+      "gorgeous",
+      "stunning",
+      "pretty",
+      "elegant",
+      "handsome"
+    ],
+    "antonyms": [
+      "ugly",
+      "unattractive",
+      "hideous",
+      "plain",
+      "unsightly"
+    ]
+  },
+  "begin": {
+    "synonyms": [
+      "start",
+      "commence",
+      "initiate",
+      "launch",
+      "embark",
+      "open",
+      "originate"
+    ],
+    "antonyms": [
+      "end",
+      "finish",
+      "stop",
+      "conclude",
+      "terminate",
+      "cease"
+    ]
+  },
+  "big": {
+    "synonyms": [
+      "large",
+      "great",
+      "huge",
+      "enormous",
+      "vast",
+      "immense",
+      "gigantic",
+      "massive"
+    ],
+    "antonyms": [
+      "small",
+      "little",
+      "tiny",
+      "miniature",
+      "petite",
+      "minute"
+    ]
+  },
+  "brave": {
+    "synonyms": [
+      "courageous",
+      "bold",
+      "fearless",
+      "daring",
+      "valiant",
+      "heroic",
+      "intrepid"
+    ],
+    "antonyms": [
+      "cowardly",
+      "timid",
+      "fearful",
+      "afraid",
+      "craven",
+      "spineless"
+    ]
+  },
+  "bright": {
+    "synonyms": [
+      "luminous",
+      "radiant",
+      "brilliant",
+      "vivid",
+      "shining",
+      "gleaming",
+      "dazzling"
+    ],
+    "antonyms": [
+      "dark",
+      "dim",
+      "dull",
+      "murky",
+      "gloomy",
+      "shadowy"
+    ]
+  },
+  "calm": {
+    "synonyms": [
+      "peaceful",
+      "serene",
+      "tranquil",
+      "composed",
+      "placid",
+      "quiet",
+      "still"
+    ],
+    "antonyms": [
+      "angry",
+      "agitated",
+      "upset",
+      "turbulent",
+      "anxious",
+      "disturbed"
+    ]
+  },
+  "clean": {
+    "synonyms": [
+      "spotless",
+      "tidy",
+      "neat",
+      "immaculate",
+      "pure",
+      "sanitary",
+      "hygienic"
+    ],
+    "antonyms": [
+      "dirty",
+      "filthy",
+      "messy",
+      "unclean",
+      "soiled",
+      "grimy",
+      "polluted"
+    ]
+  },
+  "close": {
+    "synonyms": [
+      "shut",
+      "seal",
+      "lock",
+      "fasten",
+      "block",
+      "restrict",
+      "near"
+    ],
+    "antonyms": [
+      "open",
+      "unlock",
+      "expose",
+      "accessible",
+      "available",
+      "distant"
+    ]
+  },
+  "cold": {
+    "synonyms": [
+      "cool",
+      "chilly",
+      "frigid",
+      "icy",
+      "freezing",
+      "frosty",
+      "arctic"
+    ],
+    "antonyms": [
+      "hot",
+      "warm",
+      "burning",
+      "scorching",
+      "blazing",
+      "sweltering"
+    ]
+  },
+  "dark": {
+    "synonyms": [
+      "dim",
+      "murky",
+      "gloomy",
+      "shadowy",
+      "obscure",
+      "dusky",
+      "pitch-black"
+    ],
+    "antonyms": [
+      "bright",
+      "luminous",
+      "radiant",
+      "brilliant",
+      "vivid",
+      "shining"
+    ]
+  },
+  "dirty": {
+    "synonyms": [
+      "filthy",
+      "messy",
+      "unclean",
+      "soiled",
+      "grimy",
+      "polluted",
+      "muddy"
+    ],
+    "antonyms": [
+      "clean",
+      "spotless",
+      "tidy",
+      "neat",
+      "immaculate",
+      "pure",
+      "sanitary"
+    ]
+  },
+  "dry": {
+    "synonyms": [
+      "arid",
+      "parched",
+      "dehydrated",
+      "desiccated",
+      "waterless",
+      "bone-dry"
+    ],
+    "antonyms": [
+      "wet",
+      "damp",
+      "moist",
+      "soggy",
+      "soaked",
+      "drenched",
+      "saturated"
+    ]
+  },
+  "easy": {
+    "synonyms": [
+      "simple",
+      "effortless",
+      "straightforward",
+      "uncomplicated",
+      "basic",
+      "clear"
+    ],
+    "antonyms": [
+      "hard",
+      "difficult",
+      "tough",
+      "challenging",
+      "demanding",
+      "arduous"
+    ]
+  },
+  "empty": {
+    "synonyms": [
+      "vacant",
+      "hollow",
+      "bare",
+      "blank",
+      "void",
+      "depleted",
+      "barren"
+    ],
+    "antonyms": [
+      "full",
+      "complete",
+      "packed",
+      "stuffed",
+      "filled",
+      "brimming"
+    ]
+  },
+  "end": {
+    "synonyms": [
+      "finish",
+      "stop",
+      "conclude",
+      "terminate",
+      "cease",
+      "close",
+      "complete"
+    ],
+    "antonyms": [
+      "begin",
+      "start",
+      "commence",
+      "initiate",
+      "launch",
+      "open"
+    ]
+  },
+  "false": {
+    "synonyms": [
+      "incorrect",
+      "wrong",
+      "fake",
+      "untrue",
+      "inaccurate",
+      "erroneous",
+      "bogus"
+    ],
+    "antonyms": [
+      "true",
+      "correct",
+      "accurate",
+      "genuine",
+      "real",
+      "valid",
+      "authentic"
+    ]
+  },
+  "fast": {
+    "synonyms": [
+      "quick",
+      "rapid",
+      "swift",
+      "speedy",
+      "hasty",
+      "brisk",
+      "fleet"
+    ],
+    "antonyms": [
+      "slow",
+      "sluggish",
+      "leisurely",
+      "unhurried",
+      "gradual"
+    ]
+  },
+  "full": {
+    "synonyms": [
+      "complete",
+      "packed",
+      "stuffed",
+      "filled",
+      "brimming",
+      "overflowing",
+      "satiated"
+    ],
+    "antonyms": [
+      "empty",
+      "vacant",
+      "hollow",
+      "bare",
+      "blank",
+      "void"
+    ]
+  },
+  "give": {
+    "synonyms": [
+      "provide",
+      "offer",
+      "grant",
+      "bestow",
+      "donate",
+      "supply",
+      "present"
+    ],
+    "antonyms": [
+      "take",
+      "receive",
+      "withdraw",
+      "withhold",
+      "refuse",
+      "deny"
+    ]
+  },
+  "good": {
+    "synonyms": [
+      "excellent",
+      "fine",
+      "superb",
+      "splendid",
+      "wonderful",
+      "great",
+      "positive",
+      "favorable"
+    ],
+    "antonyms": [
+      "bad",
+      "poor",
+      "terrible",
+      "awful",
+      "dreadful",
+      "horrible",
+      "inferior"
+    ]
+  },
+  "happy": {
+    "synonyms": [
+      "joyful",
+      "cheerful",
+      "content",
+      "pleased",
+      "delighted",
+      "glad",
+      "elated",
+      "blissful"
+    ],
+    "antonyms": [
+      "sad",
+      "unhappy",
+      "miserable",
+      "sorrowful",
+      "dejected",
+      "gloomy",
+      "melancholy"
+    ]
+  },
+  "hard": {
+    "synonyms": [
+      "difficult",
+      "tough",
+      "challenging",
+      "demanding",
+      "arduous",
+      "firm",
+      "solid"
+    ],
+    "antonyms": [
+      "easy",
+      "simple",
+      "soft",
+      "effortless",
+      "straightforward",
+      "gentle"
+    ]
+  },
+  "hate": {
+    "synonyms": [
+      "detest",
+      "despise",
+      "loathe",
+      "abhor",
+      "dislike",
+      "resent"
+    ],
+    "antonyms": [
+      "love",
+      "adore",
+      "cherish",
+      "treasure",
+      "like",
+      "appreciate"
+    ]
+  },
+  "hot": {
+    "synonyms": [
+      "warm",
+      "burning",
+      "scorching",
+      "blazing",
+      "sweltering",
+      "torrid",
+      "fiery"
+    ],
+    "antonyms": [
+      "cold",
+      "cool",
+      "chilly",
+      "frigid",
+      "icy",
+      "freezing"
+    ]
+  },
+  "long": {
+    "synonyms": [
+      "lengthy",
+      "extended",
+      "prolonged",
+      "stretched",
+      "elongated",
+      "tall"
+    ],
+    "antonyms": [
+      "short",
+      "brief",
+      "compact",
+      "concise",
+      "curtailed"
+    ]
+  },
+  "love": {
+    "synonyms": [
+      "adore",
+      "cherish",
+      "treasure",
+      "admire",
+      "like",
+      "fondness",
+      "affection"
+    ],
+    "antonyms": [
+      "hate",
+      "detest",
+      "despise",
+      "loathe",
+      "abhor",
+      "dislike"
+    ]
+  },
+  "narrow": {
+    "synonyms": [
+      "thin",
+      "slender",
+      "tight",
+      "cramped",
+      "confined",
+      "restricted",
+      "slim"
+    ],
+    "antonyms": [
+      "wide",
+      "broad",
+      "expansive",
+      "spacious",
+      "roomy",
+      "extensive"
+    ]
+  },
+  "new": {
+    "synonyms": [
+      "fresh",
+      "modern",
+      "contemporary",
+      "recent",
+      "novel",
+      "current",
+      "latest"
+    ],
+    "antonyms": [
+      "old",
+      "aged",
+      "ancient",
+      "antique",
+      "archaic",
+      "vintage",
+      "outdated"
+    ]
+  },
+  "old": {
+    "synonyms": [
+      "aged",
+      "ancient",
+      "elderly",
+      "antique",
+      "archaic",
+      "vintage",
+      "mature"
+    ],
+    "antonyms": [
+      "new",
+      "young",
+      "modern",
+      "fresh",
+      "contemporary",
+      "recent"
+    ]
+  },
+  "open": {
+    "synonyms": [
+      "unlock",
+      "unclose",
+      "expose",
+      "accessible",
+      "available",
+      "clear",
+      "free"
+    ],
+    "antonyms": [
+      "close",
+      "shut",
+      "seal",
+      "lock",
+      "block",
+      "restrict"
+    ]
+  },
+  "poor": {
+    "synonyms": [
+      "broke",
+      "destitute",
+      "impoverished",
+      "penniless",
+      "needy",
+      "indigent"
+    ],
+    "antonyms": [
+      "rich",
+      "wealthy",
+      "affluent",
+      "prosperous",
+      "well-off",
+      "opulent"
+    ]
+  },
+  "rich": {
+    "synonyms": [
+      "wealthy",
+      "affluent",
+      "prosperous",
+      "well-off",
+      "opulent",
+      "flush"
+    ],
+    "antonyms": [
+      "poor",
+      "broke",
+      "destitute",
+      "impoverished",
+      "penniless",
+      "needy"
+    ]
+  },
+  "right": {
+    "synonyms": [
+      "correct",
+      "accurate",
+      "proper",
+      "true",
+      "valid",
+      "appropriate",
+      "suitable"
+    ],
+    "antonyms": [
+      "wrong",
+      "incorrect",
+      "false",
+      "improper",
+      "unsuitable",
+      "inaccurate"
+    ]
+  },
+  "sad": {
+    "synonyms": [
+      "unhappy",
+      "sorrowful",
+      "dejected",
+      "miserable",
+      "gloomy",
+      "melancholy",
+      "downcast"
+    ],
+    "antonyms": [
+      "happy",
+      "joyful",
+      "cheerful",
+      "elated",
+      "blissful",
+      "content"
+    ]
+  },
+  "short": {
+    "synonyms": [
+      "brief",
+      "compact",
+      "concise",
+      "curtailed",
+      "abbreviated",
+      "stubby",
+      "little"
+    ],
+    "antonyms": [
+      "long",
+      "lengthy",
+      "extended",
+      "prolonged",
+      "stretched",
+      "tall"
+    ]
+  },
+  "slow": {
+    "synonyms": [
+      "sluggish",
+      "leisurely",
+      "unhurried",
+      "gradual",
+      "plodding",
+      "languid"
+    ],
+    "antonyms": [
+      "fast",
+      "quick",
+      "rapid",
+      "swift",
+      "speedy",
+      "hasty"
+    ]
+  },
+  "small": {
+    "synonyms": [
+      "little",
+      "tiny",
+      "miniature",
+      "petite",
+      "minute",
+      "compact",
+      "slight"
+    ],
+    "antonyms": [
+      "big",
+      "large",
+      "great",
+      "huge",
+      "enormous",
+      "vast",
+      "immense"
+    ]
+  },
+  "smart": {
+    "synonyms": [
+      "intelligent",
+      "clever",
+      "bright",
+      "wise",
+      "sharp",
+      "astute",
+      "brilliant"
+    ],
+    "antonyms": [
+      "dumb",
+      "stupid",
+      "foolish",
+      "ignorant",
+      "dense",
+      "obtuse"
+    ]
+  },
+  "strong": {
+    "synonyms": [
+      "powerful",
+      "mighty",
+      "sturdy",
+      "robust",
+      "muscular",
+      "vigorous",
+      "tough"
+    ],
+    "antonyms": [
+      "weak",
+      "feeble",
+      "frail",
+      "fragile",
+      "delicate",
+      "powerless"
+    ]
+  },
+  "take": {
+    "synonyms": [
+      "grab",
+      "seize",
+      "acquire",
+      "obtain",
+      "receive",
+      "accept",
+      "capture"
+    ],
+    "antonyms": [
+      "give",
+      "provide",
+      "offer",
+      "grant",
+      "donate",
+      "return",
+      "relinquish"
+    ]
+  },
+  "true": {
+    "synonyms": [
+      "correct",
+      "accurate",
+      "genuine",
+      "real",
+      "valid",
+      "authentic",
+      "factual"
+    ],
+    "antonyms": [
+      "false",
+      "incorrect",
+      "wrong",
+      "fake",
+      "untrue",
+      "inaccurate"
+    ]
+  },
+  "ugly": {
+    "synonyms": [
+      "unattractive",
+      "hideous",
+      "plain",
+      "unsightly",
+      "repulsive",
+      "grotesque"
+    ],
+    "antonyms": [
+      "beautiful",
+      "attractive",
+      "lovely",
+      "gorgeous",
+      "stunning",
+      "pretty"
+    ]
+  },
+  "weak": {
+    "synonyms": [
+      "feeble",
+      "frail",
+      "fragile",
+      "delicate",
+      "powerless",
+      "flimsy",
+      "helpless"
+    ],
+    "antonyms": [
+      "strong",
+      "powerful",
+      "mighty",
+      "sturdy",
+      "robust",
+      "muscular"
+    ]
+  },
+  "wet": {
+    "synonyms": [
+      "damp",
+      "moist",
+      "soggy",
+      "soaked",
+      "drenched",
+      "saturated",
+      "humid"
+    ],
+    "antonyms": [
+      "dry",
+      "arid",
+      "parched",
+      "dehydrated"
+    ]
+  },
+  "wide": {
+    "synonyms": [
+      "broad",
+      "expansive",
+      "spacious",
+      "roomy",
+      "extensive",
+      "ample"
+    ],
+    "antonyms": [
+      "narrow",
+      "thin",
+      "slender",
+      "tight",
+      "cramped",
+      "confined"
+    ]
+  },
+  "wrong": {
+    "synonyms": [
+      "incorrect",
+      "false",
+      "improper",
+      "unsuitable",
+      "inaccurate",
+      "erroneous"
+    ],
+    "antonyms": [
+      "right",
+      "correct",
+      "accurate",
+      "proper",
+      "true",
+      "valid",
+      "appropriate"
+    ]
+  }
+}
