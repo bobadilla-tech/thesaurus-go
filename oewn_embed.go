@@ -37,7 +37,6 @@ var antonymsOEWNData map[string][]string
 var allWords []string
 
 func init() {
-
 	if err := json.Unmarshal(curatedRaw, &curatedData); err != nil {
 		panic(err)
 	}
@@ -50,20 +49,25 @@ func init() {
 
 func buildAllWords(curated map[string]Entry, synonymsOEWN, antonymsOEWN map[string][]string) []string {
 	seen := make(map[string]struct{}, len(curated)+len(synonymsOEWN)+len(antonymsOEWN))
+	
 	for word := range curated {
 		seen[word] = struct{}{}
 	}
+	
 	for word := range synonymsOEWN {
 		seen[word] = struct{}{}
 	}
+	
 	for word := range antonymsOEWN {
 		seen[word] = struct{}{}
 	}
 
 	words := make([]string, 0, len(seen))
+	
 	for word := range seen {
 		words = append(words, word)
 	}
+	
 	sort.Strings(words)
 	return words
 }
@@ -75,6 +79,7 @@ func buildAllWords(curated map[string]Entry, synonymsOEWN, antonymsOEWN map[stri
 // or missing dataset.
 func mustLoadGzipJSON(compressed []byte) map[string][]string {
 	gz, err := gzip.NewReader(bytes.NewReader(compressed))
+
 	if err != nil {
 		panic(err)
 	}
@@ -82,11 +87,13 @@ func mustLoadGzipJSON(compressed []byte) map[string][]string {
 	defer gz.Close()
 
 	decompressed, err := io.ReadAll(gz)
+	
 	if err != nil {
 		panic(err)
 	}
 
 	var data map[string][]string
+	
 	if err := json.Unmarshal(decompressed, &data); err != nil {
 		panic(err)
 	}

@@ -121,12 +121,38 @@ func AllWords() []string
 
 Every known word, sorted. Returns a copy — safe to mutate.
 
+## CLI Tool
+
+`cmd/thesaurus` is a small example CLI over the package's own API — stdlib only,
+no dependencies:
+
+```bash
+go install github.com/bobadilla-tech/thesaurus-go/cmd/thesaurus@latest
+```
+
+```bash
+$ thesaurus lookup happy
+Synonyms: [joyful cheerful content pleased delighted glad elated blissful]
+Antonyms: [sad unhappy miserable sorrowful dejected gloomy melancholy]
+
+$ thesaurus prefix happ
+happen
+happening
+happenstance
+happily
+happiness
+happy
+
+$ thesaurus count
+45695
+```
+
 ## How It Works
 
 1. **Normalize**: input words are trimmed and converted to lowercase.
 2. **Curated lookup**: a small hand-maintained dataset is checked first. Curated
    entries always take precedence over OEWN.
-3. \*_OEWN fallback_: if the word is not present in the curated dataset,
+3. **OEWN fallback**: if the word is not present in the curated dataset,
    synonyms and antonyms are resolved from the embedded Open English WordNet
    indexes.
 4. **Embedded data**: the generated JSON indexes are gzip-compressed and
@@ -134,9 +160,9 @@ Every known word, sorted. Returns a copy — safe to mutate.
 
 ## Regenerating the Dataset
 
-The repository includes a build-time parser located in `cmd/wnparser`. Data
-sources are pluggable through a `Provider` interface (see
-`cmd/wnparser/provider.go`) — `oewn` is the only one implemented today, but
+The repository includes a build-time preprocessor located in `cmd/datasetbuild`.
+Data sources are pluggable through a `Provider` interface (see
+`cmd/datasetbuild/provider.go`) — `oewn` is the only one implemented today, but
 adding another means implementing `Provider` and registering it, with no changes
 to `main()`.
 
@@ -146,7 +172,7 @@ format) and generates the compressed JSON files embedded by the package.
 Example:
 
 ```bash
-go run ./cmd/wnparser \
+go run ./cmd/datasetbuild \
   -input english-wordnet-2025.xml \
   -output-dir ./dataset \
   -provider oewn
