@@ -119,6 +119,17 @@ This command generates:
 
 These files are consumed automatically through `go:embed`.
 
+## Benchmarks & Design Notes
+
+- **FST (vellum) spike** — evaluated `github.com/blevesearch/vellum` as an
+  alternative lookup backend. Rejected: 12.6x slower on steady-state point
+  lookup (map: 22ns/op, 0 allocs vs FST: 277ns/op, 1 alloc), wash-to-worse on
+  embedded artifact size. Full writeup and prototype on the
+  [`spike/vellum-fst`](https://github.com/bobadilla-tech/thesaurus-go/tree/spike/vellum-fst)
+  branch, not merged — see
+  [`docs/fst-benchmark.md`](https://github.com/bobadilla-tech/thesaurus-go/blob/spike/vellum-fst/docs/fst-benchmark.md)
+  on that branch.
+
 ## Testing
 
 Run the tests:
