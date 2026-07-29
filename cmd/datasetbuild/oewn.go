@@ -1,26 +1,9 @@
-// Package main implements wnparser, a BUILD-TIME tool kept separate from
-// pkg/thesaurus. It is not imported by production code and is not part of
-// the API binary — it runs manually (or via `go generate`) only when the
-// dataset needs to be regenerated (a new OEWN release, a correction to the
-// curated antonym layer).
-//
-// It reads the raw Open English WordNet (GWN-LMF) XML and generates two
-// gzip-compressed JSON files (word -> []string), ready to be embedded into
-// pkg/thesaurus via //go:embed with no extra compression step.
-//
-// Usage:
-//
-//	go run ./cmd/wnparser -input english-wordnet-2025.xml -output-dir ./pkg/thesaurus
 package main
 
 import (
-	"compress/gzip"
-	"encoding/json"
 	"encoding/xml"
-	"flag"
 	"fmt"
 	"os"
-	"path/filepath"
 	"strings"
 )
 
@@ -168,38 +151,20 @@ func allLemmas(lex Lexicon) []string {
 	return lemmas
 }
 
-// writeJSONGzip encodes data as JSON and writes it gzip-compressed directly
-// to path (expected to end in .json.gz). This avoids a separate manual
-// compression step — the tool always produces the embed-ready artifact.
-func writeJSONGzip(path string, data map[string][]string) error {
-	f, err := os.Create(path)
+// oewnProvider implements Provider for the Open English WordNet GWN-LMF XML
+// format.
+type oewnProvider struct{}
+
+func (oewnProvider) Parse(path string) (synonyms, antonyms map[string][]string, err error) {
+	data, err := os.ReadFile(path)
 	if err != nil {
-		return err
-	}
-	defer f.Close()
-
-	gz := gzip.NewWriter(f)
-	defer gz.Close()
-
-	enc := json.NewEncoder(gz)
-	enc.SetIndent("", "  ")
-	return enc.Encode(data)
-}
-
-func main() {
-	inputPath := flag.String("input", "english-wordnet-2025.xml", "path to the raw OEWN XML (GWN-LMF)")
-	outputDir := flag.String("output-dir", ".", "directory to write synonyms.json and antonyms.json to")
-	flag.Parse()
-
-	data, err := os.ReadFile(*inputPath)
-	if err != nil {
-		panic(err)
+		return nil, nil, err
 	}
 
 	fmt.Println("parsing XML...")
 	var lr LexicalResource
 	if err := xml.Unmarshal(data, &lr); err != nil {
-		panic(err)
+		return nil, nil, err
 	}
 
 	fmt.Println("building indexes...")
@@ -208,8 +173,8 @@ func main() {
 	lemmas := allLemmas(lr.Lexicon)
 	fmt.Printf("generating entries for %d unique words...\n", len(lemmas))
 
-	synonyms := map[string][]string{}
-	antonyms := map[string][]string{}
+	synonyms = map[string][]string{}
+	antonyms = map[string][]string{}
 
 	for _, lemma := range lemmas {
 		if !isSingleWord(lemma) {
@@ -223,17 +188,5 @@ func main() {
 		}
 	}
 
-	synPath := filepath.Join(*outputDir, "synonyms.json.gz")
-	antPath := filepath.Join(*outputDir, "antonyms.json.gz")
-
-	if err := writeJSONGzip(synPath, synonyms); err != nil {
-		panic(err)
-	}
-	if err := writeJSONGzip(antPath, antonyms); err != nil {
-		panic(err)
-	}
-
-	fmt.Printf("done: %s (%d words with synonyms), %s (%d words with antonyms)\n",
-		synPath, len(synonyms), antPath, len(antonyms))
-	fmt.Println("both files are gzip-compressed and ready to //go:embed in pkg/thesaurus")
+	return synonyms, antonyms, nil
 }

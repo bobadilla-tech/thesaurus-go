@@ -6,28 +6,35 @@ import (
 	_ "embed"
 	"encoding/json"
 	"io"
+	"sort"
 )
 
-// curated.json is hand-maintained directly in this repo — see it for the
-// small, manually curated word list that takes priority over OEWN.
+// dataset/curated.json is hand-maintained directly in this repo — see it
+// for the small, manually curated word list that takes priority over OEWN.
 
 type Entry struct {
 	Synonyms []string
 	Antonyms []string
 }
 
-//go:embed curated.json
+//go:embed dataset/curated.json
 var curatedRaw []byte
 
-//go:embed synonyms_oewn.json.gz
+//go:embed dataset/synonyms_oewn.json.gz
 var synonymsCompressed []byte
 
-//go:embed antonyms_oewn.json.gz
+//go:embed dataset/antonyms_oewn.json.gz
 var antonymsCompressed []byte
 
 var curatedData map[string]Entry
 var synonymsOEWNData map[string][]string
 var antonymsOEWNData map[string][]string
+
+// allWords is every word Lookup can answer for, deduplicated and sorted
+// once at startup so WordsWithPrefix/Count/AllWords don't have to redo the
+// merge (and don't have to reason about curated vs OEWN precedence, since
+// this is just the set of known words, not their entries).
+var allWords []string
 
 func init() {
 
@@ -37,6 +44,28 @@ func init() {
 
 	synonymsOEWNData = mustLoadGzipJSON(synonymsCompressed)
 	antonymsOEWNData = mustLoadGzipJSON(antonymsCompressed)
+
+	allWords = buildAllWords(curatedData, synonymsOEWNData, antonymsOEWNData)
+}
+
+func buildAllWords(curated map[string]Entry, synonymsOEWN, antonymsOEWN map[string][]string) []string {
+	seen := make(map[string]struct{}, len(curated)+len(synonymsOEWN)+len(antonymsOEWN))
+	for word := range curated {
+		seen[word] = struct{}{}
+	}
+	for word := range synonymsOEWN {
+		seen[word] = struct{}{}
+	}
+	for word := range antonymsOEWN {
+		seen[word] = struct{}{}
+	}
+
+	words := make([]string, 0, len(seen))
+	for word := range seen {
+		words = append(words, word)
+	}
+	sort.Strings(words)
+	return words
 }
 
 // mustLoadGzipJSON decompresses a gzip-compressed JSON payload embedded via
